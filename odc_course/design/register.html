@@ -1,0 +1,56 @@
+<style>
+	body{
+        background: rgba(63 116 63 / 30%);
+    }
+	.container{
+		width:70%;
+        margin:auto;
+        text-align:center;
+        margin-top:10%;
+		padding:2.1% 0
+	}
+	input{
+		padding:6px;
+		display: block;
+		margin-left:25% ;
+		width: 40%;
+		margin-bottom: 1%;
+	}
+	input[type='submit']{
+		color:#fff;
+        margin:10px 10px 0 0;
+        background:green;
+		margin-left:25% ;
+	}
+	a{
+
+		text-align: center;
+	}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<form action="register.php" method="post">
+				<input type="text" name="name" placeholder="type your name" />
+				<input type="text" name="email" placeholder="Type Your Email" />
+				<input
+					type="text"
+					name="password"
+					placeholder="Type Your password"
+				/>
+				<input type="text" name="phone" placeholder="Type Your phone" />
+				<input type="submit" value="register" />
+			</form>
+			<a href="login.php">Have account?</a>
+		</div>
+		
+	</body>
+</html>
