@@ -1,22 +1,21 @@
- <?php
+<?php
 
+ namespace MVC\core;
 
-// namespace;
-
- class DB{
+class DB{
 
     public $sql;
     public $onnection;
 
     public function __construct()
     {
-        $this->connection=mysqli_connect("localhost","root","","odc");
+        $this->connection=mysqli_connect("localhost","root","","odccrud");
     }
 
     public function select($table,$column){
         $this->sql = "SELECT $column FROM `$table`";
-
         return $this;
+
     }
 
     public function first(){

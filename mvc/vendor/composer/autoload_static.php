@@ -16,13 +16,12 @@ class ComposerStaticInitf2f1a234f05fb3481058d237f97aeeeb
     public static $prefixDirsPsr4 = array (
         'MVC\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'MVC\\controller\\category' => __DIR__ . '/../..' . '/app/controller/category.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

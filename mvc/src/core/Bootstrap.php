@@ -1,5 +1,5 @@
 <?php
-
+namespace MVC\core;
 
 class Bootstrap{
 
@@ -12,20 +12,38 @@ class Bootstrap{
         $this->url();
         $this->run();
     }
-    private function url(){
+    public function url(){
         $url = $_SERVER['QUERY_STRING'];
-        $url = explode("/",$url);
-
+        //print_r($url);
+        $url =explode("/",$url);
         $this->controller = (!empty($url[0])) ? $url[0] : "home";
         $this->method = (!empty($url[1])) ? $url[1] : "index";
+        //الباقى من ال url
         if(!empty($url)){
             unset($url[0],$url[1]);
         }
-        $this->params = $url;
+      
+        $this->params = $url;//array_values($url);
+        // echo "Test ";
+        // echo $url;
     }
 
     private function run(){
-        $controller = "Odc\\Mvc\\controllers\\".$this->controller;
-        call_user_func_array([new $controller,$this->method],$this->params);
+        // echo $this->controller;
+        // echo $this->method;
+
+        $controller = "MVC\\controller\\".$this->controller;
+        if(class_exists($controller )){
+           if(method_exists($controller,$this->method)){
+                call_user_func_array([$controller,$this->method],[]);
+           }else{
+            echo "Method not exit";
+           }
+        }else{
+            echo "class not exist ";
+        }
+        // echo $controller;
+        // echo $this->params;
+        // call_user_func_array([$controller,$this->method],$this->params);
     }
 }
